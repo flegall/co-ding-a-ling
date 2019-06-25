@@ -21,6 +21,7 @@ exports.handler = async (
 
   const response = {
     ...body,
+    ok: "TPOLM",
   };
 
   callback(null, {
