@@ -42,7 +42,9 @@
     "eslint": "eslint . --cache",
     "tsc": "tsc",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.css\" \"**/*.md\"",
-    "test": "npm-run-all --parallel tsc eslint build"
+    "test": "npm-run-all --parallel tsc eslint build build:funcs",
+    "build:funcs": "netlify-lambda build funcs/",
+    "serve:funcs": "netlify-lambda serve funcs/"
   },
   "repository": {
     "type": "git",
@@ -52,8 +54,13 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.4.4",
+    "@babel/plugin-transform-object-assign": "7.2.0",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-typescript": "7.3.3",
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "2.3.0",
-    "@testing-library/cypress": "4.0.4",
+    "@types/aws-lambda": "8.10.27",
     "@types/gravatar": "1.8.0",
     "@types/jquery": "3.3.30",
     "@types/pluralize": "0.0.29",
@@ -74,6 +81,7 @@
     "gatsby-plugin-typescript": "2.1.0",
     "husky": "2.5.0",
     "lint-staged": "8.2.1",
+    "netlify-lambda": "1.4.13",
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
     "remark-parse": "6.0.3",
