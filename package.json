@@ -6,7 +6,6 @@
   "author": "Florent Le Gall <florent.legall@gmail.com>",
   "dependencies": {
     "@babel/core": "7.4.5",
-    "constate": "1.1.1",
     "gatsby": "2.10.5",
     "gatsby-image": "2.2.3",
     "gatsby-plugin-catch-links": "2.1.0",
@@ -19,25 +18,12 @@
     "gatsby-plugin-sharp": "2.2.1",
     "gatsby-plugin-typography": "2.3.0",
     "gatsby-plugin-webpack-bundle-analyzer": "1.0.5",
-    "gatsby-remark-autolink-headers": "2.1.0",
-    "gatsby-remark-copy-linked-files": "2.1.0",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "3.1.2",
-    "gatsby-remark-prismjs": "3.3.0",
-    "gatsby-remark-responsive-iframe": "2.2.1",
-    "gatsby-remark-smartypants": "2.1.0",
     "gatsby-source-filesystem": "2.1.1",
-    "gatsby-transformer-remark": "2.5.0",
-    "gatsby-transformer-sharp": "2.2.0",
-    "gravatar": "1.8.0",
-    "pluralize": "8.0.0",
     "prismjs": "1.16.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
-    "react-gravatar": "2.6.3",
     "react-helmet": "5.2.1",
     "react-typography": "0.16.19",
-    "timeago.js": "4.0.0-beta.2",
     "typography": "0.16.19",
     "typography-theme-ocean-beach": "0.16.19"
   },
@@ -56,12 +42,7 @@
     "eslint": "eslint . --cache",
     "tsc": "tsc",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.css\" \"**/*.md\"",
-    "cy:install": "cypress install",
-    "cy:open": "cypress open",
-    "cy:run": "CYPRESS_BASE_URL=http://localhost:5020 cypress run",
-    "test:e2e": "start-server-and-test serve http://localhost:5020 cy:run",
-    "test:circle": "npm-run-all --parallel tsc eslint build",
-    "build:full": "npm-run-all --parallel tsc eslint build cy:install && yarn test:e2e"
+    "test": "npm-run-all --parallel tsc eslint build"
   },
   "repository": {
     "type": "git",
@@ -72,14 +53,13 @@
   },
   "devDependencies": {
     "@gatsby-contrib/gatsby-plugin-elasticlunr-search": "2.3.0",
+    "@testing-library/cypress": "4.0.4",
     "@types/gravatar": "1.8.0",
     "@types/jquery": "3.3.30",
     "@types/pluralize": "0.0.29",
     "@types/react-gravatar": "2.6.7",
     "@types/react-helmet": "5.0.8",
     "@types/typography": "0.16.2",
-    "@testing-library/cypress": "4.0.4",
-    "cypress": "3.3.1",
     "elasticlunr": "0.9.5",
     "eslint": "5.16.0",
     "eslint-config-prettier": "5.1.0",
@@ -97,13 +77,12 @@
     "npm-run-all": "4.1.5",
     "prettier": "1.18.2",
     "remark-parse": "6.0.3",
-    "start-server-and-test": "1.9.1",
     "typescript": "3.5.2",
     "unified": "7.1.0"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && yarn build:full"
+      "pre-commit": "lint-staged && yarn test"
     }
   },
   "lint-staged": {

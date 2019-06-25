@@ -7,7 +7,6 @@
 import React from "react";
 import "prismjs/themes/prism-solarizedlight.css";
 
-import { SearchContextProvider } from "./search-state";
 import Layout from "./components/layout";
 
 export const wrapPageElement = ({ element }: { element: React.ReactNode }) => (
@@ -15,8 +14,4 @@ export const wrapPageElement = ({ element }: { element: React.ReactNode }) => (
     <Layout>{element}</Layout>
     <div data-testid="REACT_SPA_READY" />
   </>
-);
-
-export const wrapRootElement = ({ element }: { element: React.ReactNode }) => (
-  <SearchContextProvider>{element}</SearchContextProvider>
 );
