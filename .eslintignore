@@ -1,4 +1,4 @@
 **/node_modules/**/*.js
 **/.cache/*.js
 **/public/*.js
-**/functions/*.js
+**/_funcs/*.js

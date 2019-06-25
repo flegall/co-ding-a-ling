@@ -72,4 +72,4 @@ yarn-error.log
 cypress/videos/*
 cypress/screenshots/*
 
-functions/*
+_funcs/*

@@ -2,7 +2,7 @@ import {
   APIGatewayProxyEvent,
   APIGatewayProxyCallback,
   // @ts-ignore
-} from "@types/aws-lambda";
+} from "aws-lambda";
 
 exports.handler = async (
   event: APIGatewayProxyEvent,

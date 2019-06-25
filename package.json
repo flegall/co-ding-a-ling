@@ -43,8 +43,8 @@
     "tsc": "tsc",
     "format": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.css\" \"**/*.md\"",
     "test": "npm-run-all --parallel tsc eslint build build:funcs",
-    "build:funcs": "netlify-lambda build funcs/",
-    "serve:funcs": "netlify-lambda serve funcs/"
+    "build:funcs": "netlify-lambda build functions/",
+    "serve:funcs": "netlify-lambda serve functions/"
   },
   "repository": {
     "type": "git",

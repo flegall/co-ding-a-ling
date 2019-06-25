@@ -25,5 +25,5 @@
     // Browser libs
     "lib": ["dom", "es2017"]
   },
-  "include": ["./src/**/*", "./funcs/**/*"]
+  "include": ["./src/**/*", "functions/**/*"]
 }
